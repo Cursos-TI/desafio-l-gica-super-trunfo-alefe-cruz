@@ -25,8 +25,6 @@ int main(){
     printf("6 - PIB per Capita\n");
     scanf("%d", &atributoDesejado);
 
-    atributoDesejado = rand() % 6 + 1;
-
     //informações a serem pedidas da carta 1
     printf("\nPara sua primeira carta digite as respostas abaixo: \n");
     printf("\nColoque a Letra do Estado de A a H: ");
@@ -98,64 +96,82 @@ int main(){
     //printf("Super Poder: %.2f\n", SuperPoder2);
 
     //comparação dos atributos
-    switch (atributoDesejado) //aqui puxo o atributo que foi escolhido acima para comparar o dado pedido
-    {    
+    switch (atributoDesejado)
+    {
     case 1: //código para comparar a população
+        printf("\nAtributo escolhido: População\n");
+        printf("População da Carta 1: %d\n", Populacao);
+        printf("População da Carta 2: %d\n", Populacao2);
         if (Populacao > Populacao2) {
-            printf("\nEstado %c é a vencedora", Estado);
+            printf("\n%c%c %s (Carta 1) venceu", Estado, CodigoDaCarta, NomeDaCidade); //apesar de parecer algo complicado, deixei a impressão assim para mostrar os dados da carta
         } else if (Populacao < Populacao2) {
-            printf("\nEstado %c é a vencedora", Estado2);
+            printf("\n%c%c %s (Carta 2) venceu", Estado2, CodigoDaCarta2, NomeDaCidade2);
         } else {
             printf("\nEmpatou");
         }
         break;
     case 2: //código para comparar a área
+        printf("\nAtributo escolhido: Área\n");
+        printf("Área da Carta 1: %.2fkm²\n", Area);
+        printf("Área da Carta 2: %.2fkm²\n", Area2);
         if (Area > Area2) {
-            printf("\nEstado %c é a vencedora", Estado);
+            printf("\n%c%c %s (Carta 1) venceu", Estado, CodigoDaCarta, NomeDaCidade);
         } else if (Area < Area2) {
-            printf("\nEstado %c é a vencedora", Estado2);
+            printf("\n%c%c %s (Carta 2) venceu", Estado2, CodigoDaCarta2, NomeDaCidade2);
         } else {
             printf("\nEmpatou");
         }
         break;
     case 3: //código para comparar o PIB
+        printf("\nAtributo escolhido: PIB\n");
+        printf("PIB da Carta 1: %.2fbi\n", PIB);
+        printf("PIB da Carta 2: %.2fbi\n", PIB2);
         if (PIB > PIB2) {
-            printf("\nEstado %c é a vencedora", Estado);
+            printf("\n%c%c %s (Carta 1) venceu", Estado, CodigoDaCarta, NomeDaCidade);
         } else if (PIB < PIB2) {
-            printf("\nEstado %c é a vencedora", Estado2);
+            printf("\n%c%c %s (Carta 2) venceu", Estado2, CodigoDaCarta2, NomeDaCidade2);
         } else {
             printf("\nEmpatou");
         }
         break;
     case 4: //código para comparar o número de pontos turísticos
+        printf("\nAtributo escolhido: Número de Pontos Turísticos\n");
+        printf("Número de Pontos Turísticos da Carta 1: %d\n", NumeroDePontosTuristicos);
+        printf("Número de Pontos Turísticos da Carta 2: %d\n", NumeroDePontosTuristicos2);
         if (NumeroDePontosTuristicos > NumeroDePontosTuristicos2) {
-            printf("\nEstado %c é a vencedora", Estado);
+            printf("\n%c%c %s (Carta 1) venceu", Estado, CodigoDaCarta, NomeDaCidade);
         } else if (NumeroDePontosTuristicos < NumeroDePontosTuristicos2) {
-            printf("\nEstado %c é a vencedora", Estado2);
+            printf("\n%c%c %s (Carta 2) venceu", Estado2, CodigoDaCarta2, NomeDaCidade2);
         } else {
             printf("\nEmpatou");
         }
         break;
-    case 5: //código para comparar a densidade populacional
+    case 5: //código para comparar a densidade populacional (lembrando que nesse caso o vencedor é o que tiver a menor densidade populacional)
+        printf("\nAtributo escolhido: Densidade Populacional\n");
+        printf("Densidade Populacional da Carta 1: %.2fhab/km²\n", DensidadePopulacional);
+        printf("Densidade Populacional da Carta 2: %.2fhab/km²\n", DensidadePopulacional2);
         if (DensidadePopulacional < DensidadePopulacional2) {  
-            printf("\nEstado %c é a vencedora", Estado);
+            printf("\n%c%c %s (Carta 1) venceu", Estado, CodigoDaCarta, NomeDaCidade);
         } else if (DensidadePopulacional > DensidadePopulacional2) {
-            printf("\nEstado %c é a vencedora", Estado2);
+            printf("\n%c%c %s (Carta 2) venceu", Estado2, CodigoDaCarta2, NomeDaCidade2);
         } else {
             printf("\nEmpatou");
         }
         break;
-    case 6: //código para comparar o PIB per capita
+    case 6:
+        printf("\nAtributo escolhido: PIB per Capita\n");
+        printf("PIB per Capita da Carta 1: %.2fbi\n", PIBperCapita);
+        printf("PIB per Capita da Carta 2: %.2fbi\n", PIBperCapita2);
         if (PIBperCapita > PIBperCapita2) {
-            printf("\nEstado %c é a vencedora", Estado);
+            printf("\n%c%c %s (Carta 1) venceu", Estado, CodigoDaCarta, NomeDaCidade);
         } else if (PIBperCapita < PIBperCapita2) {
-            printf("\nEstado %c é a vencedora", Estado2);
+            printf("\n%c%c %s (Carta 2) venceu", Estado2, CodigoDaCarta2, NomeDaCidade2);
         } else {
             printf("\nEmpatou");
         }
         break;
-    default: //código para caso o jogador selecione um número que esteja fora das opções que dei
-        printf("\nOpção inválida");
+    default:
+        printf("\nOpção inexistente");
         break;
     }
 
